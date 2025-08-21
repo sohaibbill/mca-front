@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدورات التدريبية | تحالف الرعاية الطبية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        medical: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    },
+                    fontFamily: {
+                        'arabic': ['IBM Plex Sans Arabic', 'system-ui', 'sans-serif'],
+                        'sans': ['IBM Plex Sans Arabic', 'Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="font-arabic bg-white" dir="rtl">
+    <!-- Navigation (copy from index.html for consistency) -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary-600 to-medical-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-heartbeat text-white text-xl"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <h1 class="text-xl font-bold text-gray-900">تحالف الرعاية الطبية</h1>
+                        <p class="text-xs text-gray-500">حلول الرعاية الصحية المتقدمة</p>
+                    </div>
+                </div>
+                <div class="hidden lg:flex items-center space-x-6 space-x-reverse">
+                    <a href="index.html#about" class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200">من نحن</a>
+                    <a href="index.html#services" class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200">الخدمات</a>
+                    <a href="products.html" class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200">المنتجات</a>
+                    <a href="news.html" class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200">الأخبار</a>
+                    <a href="courses.html" class="text-primary-600 font-bold transition-colors duration-200">الدورات</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200">اتصل بنا</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-600 to-primary-800 pt-32 pb-20 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">دورات تدريبية متخصصة</h1>
+                <p class="text-xl text-gray-100 mb-8">اكتشف مجموعة متنوعة من الدورات التدريبية المتخصصة في المجال الطبي والرعاية الصحية</p>
+                <div class="flex justify-center space-x-4 space-x-reverse">
+                    <button class="bg-white text-primary-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                        ابدأ التعلم الآن
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-50 to-transparent"></div>
+    </section>
+
+    <!-- Course Categories -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">تصنيفات الدورات</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <a href="#medical" class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-stethoscope text-primary-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900">الطب العام</h3>
+                    <p class="text-gray-500 text-sm">12 دورة</p>
+                </a>
+                <a href="#rehabilitation" class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-walking text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900">التأهيل الطبي</h3>
+                    <p class="text-gray-500 text-sm">8 دورات</p>
+                </a>
+                <a href="#prosthetics" class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-hand-holding-medical text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900">الأطراف الصناعية</h3>
+                    <p class="text-gray-500 text-sm">15 دورة</p>
+                </a>
+                <a href="#healthcare" class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heartbeat text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900">الرعاية الصحية</h3>
+                    <p class="text-gray-500 text-sm">10 دورات</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">الدورات المميزة</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course Card 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow">
+                    <div class="relative">
+                        <img src="https://img-c.udemycdn.com/course/240x135/1565838_e54e_16.jpg" alt="دورة طبية" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm">مميز</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 space-x-reverse mb-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">الطب العام</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">3 ساعات</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">أساسيات التشخيص الطبي</h3>
+                        <p class="text-gray-600 text-sm mb-4">تعلم المبادئ الأساسية للتشخيص الطبي وكيفية تحليل الحالات المرضية</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2 space-x-reverse">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="المدرب" class="w-8 h-8 rounded-full">
+                                <span class="text-sm text-gray-600">د. أحمد محمد</span>
+                            </div>
+                            <span class="font-bold text-primary-600">299 ر.س</span>
+                        </div>
+                    </div>
+                    <div class="p-6 border-t border-gray-100">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2 space-x-reverse">
+                                <div class="flex items-center space-x-2 space-x-reverse">
+                                    <i class="fas fa-users"></i>
+                                    <span>324 طالب</span>
+                                </div>
+                                <div class="flex items-center space-x-2 space-x-reverse mr-4">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                            <a href="course-detail.html" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium">
+                                <span>تفاصيل الدورة</span>
+                                <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow">
+                    <div class="relative">
+                        <img src="https://img-c.udemycdn.com/course/240x135/2196488_8fc7_10.jpg" alt="دورة طبية" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm">الأكثر مبيعاً</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 space-x-reverse mb-2">
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">التأهيل الطبي</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">5 ساعات</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">العلاج الطبيعي المتقدم</h3>
+                        <p class="text-gray-600 text-sm mb-4">تعلم أحدث تقنيات العلاج الطبيعي وإعادة التأهيل للمرضى</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2 space-x-reverse">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="المدرب" class="w-8 h-8 rounded-full">
+                                <span class="text-sm text-gray-600">د. سارة خالد</span>
+                            </div>
+                            <span class="font-bold text-primary-600">399 ر.س</span>
+                        </div>
+                    </div>
+                    <div class="p-6 border-t border-gray-100">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2 space-x-reverse">
+                                <div class="flex items-center space-x-2 space-x-reverse">
+                                    <i class="fas fa-users"></i>
+                                    <span>456 طالب</span>
+                                </div>
+                                <div class="flex items-center space-x-2 space-x-reverse mr-4">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <span>4.9</span>
+                                </div>
+                            </div>
+                            <a href="course-detail.html" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium">
+                                <span>تفاصيل الدورة</span>
+                                <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow">
+                    <div class="relative">
+                        <img src="https://img-c.udemycdn.com/course/240x135/851712_fc61_6.jpg" alt="دورة طبية" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm">جديد</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 space-x-reverse mb-2">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">الأطراف الصناعية</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">4 ساعات</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">تقنيات الأطراف الصناعية الحديثة</h3>
+                        <p class="text-gray-600 text-sm mb-4">تعلم أحدث التقنيات في مجال الأطراف الصناعية والتأهيل</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2 space-x-reverse">
+                                <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="المدرب" class="w-8 h-8 rounded-full">
+                                <span class="text-sm text-gray-600">د. محمد عبدالله</span>
+                            </div>
+                            <span class="font-bold text-primary-600">499 ر.س</span>
+                        </div>
+                    </div>
+                    <div class="p-6 border-t border-gray-100">
+                        <div class="flex items-center justify-between text-sm text-gray-600">
+                            <div class="flex items-center space-x-2 space-x-reverse">
+                                <i class="fas fa-users"></i>
+                                <span>287 طالب</span>
+                            </div>
+                            <div class="flex items-center space-x-2 space-x-reverse">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button class="bg-primary-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-700 transition-colors inline-flex items-center space-x-2 space-x-reverse">
+                    <span>عرض المزيد من الدورات</span>
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">لماذا تختار دوراتنا التدريبية؟</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">نقدم تجربة تعليمية متكاملة مع أفضل المدربين والخبراء في المجال الطبي</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-certificate text-primary-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">شهادات معتمدة</h3>
+                    <p class="text-gray-600 text-sm">احصل على شهادات معتمدة بعد إكمال الدورات</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user-md text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">خبراء متخصصون</h3>
+                    <p class="text-gray-600 text-sm">تعلم على يد نخبة من الأطباء والمتخصصين</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-video text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">محتوى تفاعلي</h3>
+                    <p class="text-gray-600 text-sm">دروس فيديو عالية الجودة وتمارين تفاعلية</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">تعلم حسب وقتك</h3>
+                    <p class="text-gray-600 text-sm">مرونة في التعلم وإمكانية الوصول 24/7</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-primary-600 to-primary-800 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-white">
+                <h2 class="text-3xl font-bold mb-4">ابدأ رحلة التعلم اليوم</h2>
+                <p class="text-xl text-gray-100 mb-8 max-w-2xl mx-auto">انضم إلى آلاف المتعلمين وابدأ في تطوير مهاراتك المهنية</p>
+                <button class="bg-white text-primary-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                    اشترك الآن
+                </button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

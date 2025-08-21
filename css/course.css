@@ -1,0 +1,72 @@
+/* Course Specific Styles */
+.aspect-w-16 {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.aspect-w-16 iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Custom Scrollbar for Course Content */
+.course-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.course-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.course-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.course-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Lesson Status Indicators */
+.lesson-status {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.lesson-status.completed {
+    background-color: #10B981;
+    color: white;
+}
+
+.lesson-status.in-progress {
+    background-color: #FBBF24;
+    color: white;
+}
+
+.lesson-status.locked {
+    background-color: #E5E7EB;
+    color: #9CA3AF;
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 4px;
+    background-color: #E5E7EB;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #10B981;
+    transition: width 0.3s ease;
+}

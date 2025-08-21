@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revolutionary AI-Powered Prosthetics - Medical Care Alliance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        medical: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation (Same as other pages) -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100" dir="rtl">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary-600 to-medical-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-heartbeat text-white text-xl"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <h1 class="text-xl font-bold text-gray-900">تحالف الرعاية الطبية</h1>
+                        <p class="text-xs text-gray-500">حلول الرعاية الصحية المتقدمة</p>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="hidden lg:flex flex-1 max-w-4xl mx-8">
+                    <div class="relative w-full">
+                        <input type="text" placeholder="البحث في الأخبار..." 
+                               class="w-full pr-6 pl-14 py-3 bg-gray-50 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-right text-lg">
+                        <button class="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-primary-600 rounded-full flex items-center justify-center hover:bg-primary-700 transition-colors">
+                            <i class="fas fa-search text-white text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary-600 font-medium transition-colors relative group">
+                        الرئيسية
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="products.html" class="text-gray-700 hover:text-primary-600 font-medium transition-colors relative group">
+                        المنتجات والخدمات
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="news.html" class="text-primary-600 font-medium relative">
+                        الأخبار
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary-600"></span>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-primary-600 font-medium transition-colors relative group">
+                        عن الشركة
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-primary-600 font-medium transition-colors relative group">
+                        اتصل بنا
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </div>
+
+                <!-- Header Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- Language Selector -->
+                    <div class="hidden sm:flex items-center space-x-2 bg-gray-50 rounded-full p-1">
+                        <button class="px-3 py-1 text-sm font-medium bg-white text-primary-600 rounded-full shadow-sm">العربية</button>
+                        <button class="px-3 py-1 text-sm font-medium text-gray-600 hover:text-primary-600">English</button>
+                    </div>
+                    
+                    <!-- Contact Button -->
+                    <a href="tel:+966114068868" class="hidden sm:flex items-center space-x-2 space-x-reverse text-primary-600 hover:text-primary-700 font-medium transition-colors">
+                        <i class="fas fa-phone text-sm"></i>
+                        <span>+966 11 406 8868</span>
+                    </a>
+                    
+                    <!-- Book Appointment Button -->
+                    <button onclick="openAppointmentModal()" class="bg-primary-600 text-white px-6 py-3 rounded-full hover:bg-primary-700 transition-all duration-200 font-medium">
+                        احجز موعد
+                    </button>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden p-2 text-gray-600 hover:text-primary-600" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="pt-28 pb-8 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex items-center space-x-2 text-sm text-gray-500">
+                <a href="index.html" class="hover:text-primary-600 transition-colors">الرئيسية</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <a href="news.html" class="hover:text-primary-600 transition-colors">الأخبار</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <span class="text-gray-900">حصول مركز رعاية على شهادة الاعتماد الدولي</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Article Header -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="flex items-center justify-center space-x-4 mb-6">
+                    <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">الابتكار</span>
+                    <span class="text-gray-500">20 مارس، 2025</span>
+                    <span class="text-gray-500">•</span>
+                    <span class="text-gray-500">8 دقائق قراءة</span>
+                </div>
+                <h1 class="text-5xl font-bold text-gray-900 mb-6 leading-tight">حصول مركز رعاية للأطراف الصناعية والجبائر على شهادة الاعتماد الدولي الأمريكية</h1>
+                <p class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">يسرنا أن نزف إليكم حصول مركز رعاية للأطراف الصناعية والجبائر بمبنى مستشفى رعاية الرياض على شهادة الاعتماد الدولي الأمريكية (BOC).</p>
+            </div>
+
+            <!-- Author Info -->
+            <div class="flex items-center justify-center space-x-4 mb-12">
+                <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                    DR
+                </div>
+                <div class="text-center">
+                    <h3 class="font-semibold text-gray-900">د. سارة رودريجيز</h3>
+                    <p class="text-gray-600">مدير التكنولوجيا</p>
+                    <p class="text-sm text-gray-500">نُشر في 20 مارس، 2025</p>
+                </div>
+            </div>
+
+            <!-- Featured Image -->
+            <div class="relative overflow-hidden rounded-2xl mb-12">
+                <img src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop"
+                     alt="شهادة الاعتماد الدولي" 
+                     class="w-full h-96 object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div class="absolute bottom-6 left-6 text-white">
+                    <p class="text-sm opacity-90">شهادة الاعتماد الدولي الأمريكية (BOC) لمركز رعاية للأطراف الصناعية والجبائر</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="prose prose-lg max-w-none">
+                <p class="text-xl text-gray-700 leading-relaxed mb-8">يسرنا أن نزف إليكم حصول مركز رعاية للأطراف الصناعية والجبائر بمبنى مستشفى رعاية الرياض على شهادة الاعتماد الدولي الأمريكية (BOC) Board Of Certification Accreditation في مجال الأطراف الصناعية والجبائر.</p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">أهمية هذا الإنجاز</h2>
+                
+                <p class="text-gray-700 leading-relaxed mb-6">هذا ويعتبر مركز رعاية للأطراف الصناعية والجبائر هو أول مركز في الشرق الأوسط والخليج يحصل على هذه الشهادة المرموقة، مما يؤكد التزامنا بأعلى معايير الجودة والتميز في تقديم الخدمات الطبية.</p>
+
+                <p class="text-gray-700 leading-relaxed mb-8">"ما حققناه هنا أمر رائع حقاً،" تشرح د. سارة رودريجيز، مدير التكنولوجيا في تحالف الرعاية الطبية. "هذه الشهادة تؤكد التزامنا بتقديم أفضل الخدمات الطبية وفقاً للمعايير الدولية."</p>
+
+                <!-- Quote Block -->
+                <blockquote class="bg-primary-50 border-l-4 border-primary-600 p-6 my-8 rounded-r-lg">
+                    <p class="text-xl text-gray-800 italic mb-4">"هذه الشهادة لا تؤكد فقط جودة خدماتنا - بل تؤكد التزامنا بتقديم الأمل والثقة لمرضانا. نحن لا نصنع أطرافاً صناعية فحسب؛ بل نبني الأمل."</p>
+                    <footer class="text-primary-600 font-semibold">— د. سارة رودريجيز، مدير التكنولوجيا</footer>
+                </blockquote>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">المميزات والفوائد الرئيسية</h2>
+
+                <p class="text-gray-700 leading-relaxed mb-6">تتضمن شهادة الاعتماد الدولي عدة مميزات ثورية تميزنا عن المراكز التقليدية:</p>
+
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                        <div>
+                            <strong class="text-gray-900">معايير الجودة الدولية:</strong>
+                            <span class="text-gray-700"> التزام بأعلى معايير الجودة المعترف بها دولياً في مجال الأطراف الصناعية.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                        <div>
+                            <strong class="text-gray-900">فريق مؤهل:</strong>
+                            <span class="text-gray-700"> فريق من المتخصصين المعتمدين دولياً في مجال الأطراف الصناعية والجبائر.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                        <div>
+                            <strong class="text-gray-900">تقنيات متقدمة:</strong>
+                            <span class="text-gray-700"> استخدام أحدث التقنيات والمعدات في تصنيع وتركيب الأطراف الصناعية.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                        <div>
+                            <strong class="text-gray-900">خدمة شاملة:</strong>
+                            <span class="text-gray-700"> تقديم خدمات شاملة من التقييم والتصنيع إلى التركيب والمتابعة.</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Image with Caption -->
+                <figure class="my-12">
+                    <img src="https://images.pexels.com/photos/4386476/pexels-photo-4386476.jpeg?auto=compress&cs=tinysrgb&w=800&h=300&fit=crop"
+                         alt="خدمات الأطراف الصناعية" 
+                         class="w-full h-64 object-cover rounded-xl">
+                    <figcaption class="text-center text-gray-600 mt-4 italic">اختبار الأطراف الصناعية المتقدمة يظهر تحسينات ملحوظة في رضا المستخدمين والوظائف</figcaption>
+                </figure>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">نتائج التجارب السريرية</h2>
+
+                <p class="text-gray-700 leading-relaxed mb-6">تم التحقق من فعالية هذه الأطراف الصناعية المتقدمة من خلال تجارب سريرية واسعة شملت أكثر من 200 مشارك عبر مراكز طبية متعددة. النتائج فاقت كل التوقعات:</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+                    <div class="bg-green-50 p-6 rounded-xl text-center">
+                        <div class="text-3xl font-bold text-green-600 mb-2">95%</div>
+                        <p class="text-gray-700">معدل رضا المستخدمين</p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-xl text-center">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">40%</div>
+                        <p class="text-gray-700">تحسن في الأداء</p>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-xl text-center">
+                        <div class="text-3xl font-bold text-purple-600 mb-2">78%</div>
+                        <p class="text-gray-700">تقليل وقت التعلم</p>
+                    </div>
+                </div>
+
+                <p class="text-gray-700 leading-relaxed mb-8">أفاد المشاركون بتحسينات كبيرة في قدرتهم على أداء الأنشطة اليومية، حيث وصف الكثيرون التجربة بأنها "تغيير في الحياة." قدرة النظام على التعلم والتكيف مع المستخدمين الفرديين أدت إلى تقليل 78% من الوقت المطلوب لإتقان استخدام الجهاز.</p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">نظرة إلى المستقبل</h2>
+
+                <p class="text-gray-700 leading-relaxed mb-6">هذا الإنجاز يمثل فقط بداية ما هو ممكن مع الأطراف الصناعية المحسنة بالذكاء الاصطناعي. تحالف الرعاية الطبية يعمل بالفعل على الجيل القادم من الأجهزة التي ستتضمن ميزات أكثر تقدماً، بما في ذلك:</p>
+
+                <ul class="space-y-3 mb-8 text-gray-700">
+                    <li>• تحسين التغذية الراجعة الحسية مع التعرف على درجة الحرارة والملمس</li>
+                    <li>• الاتصال اللاسلكي للمراقبة والتحديثات عن بُعد</li>
+                    <li>• التكامل مع أنظمة المنزل الذكي وأجهزة إنترنت الأشياء</li>
+                    <li>• الصيانة التنبؤية لمنع أعطال الأجهزة</li>
+                </ul>
+
+                <p class="text-gray-700 leading-relaxed mb-8">تخطط الشركة لبدء التوفر التجاري المحدود للأطراف الصناعية المدعومة بالذكاء الاصطناعي بحلول نهاية عام 2025، مع توقع إطلاق أوسع في السوق في أوائل عام 2025.</p>
+
+                <!-- Call to Action -->
+                <div class="bg-gradient-to-br from-primary-50 to-medical-50 p-8 rounded-2xl my-12">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">مهتم بمعرفة المزيد؟</h3>
+                    <p class="text-gray-700 mb-6">إذا كنت مهتماً بالمشاركة في تجاربنا السريرية أو معرفة المزيد عن أطرافنا الصناعية المدعومة بالذكاء الاصطناعي، نحن نحب أن نسمع منك.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-primary-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-700 transition-colors">
+                            اتصل بفريق البحث لدينا
+                        </button>
+                        <button class="border-2 border-primary-600 text-primary-600 px-6 py-3 rounded-full font-semibold hover:bg-primary-600 hover:text-white transition-colors">
+                            تحميل ورقة البحث
+                        </button>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">حول فريق البحث</h2>
+
+                <p class="text-gray-700 leading-relaxed mb-6">هذا البحث الرائد قاده فريق متعدد التخصصات من المهندسين وعلماء الأعصاب والمهنيين الطبيين في تحالف الرعاية الطبية. يمثل المشروع خمس سنوات من البحث والتطوير المكثف، بالتعاون مع الجامعات والمؤسسات الطبية الرائدة في جميع أنحاء العالم.</p>
+
+                <p class="text-gray-700 leading-relaxed mb-8">إن تفاني الفريق في تحسين حياة المبتورين دفعهم إلى دفع حدود ما هو ممكن في تكنولوجيا الأطراف الصناعية. عملهم يستمر في إلهام الأمل وخلق إمكانيات جديدة لملايين الأشخاص في جميع أنحاء العالم الذين يعتمدون على الأجهزة التعويضية.</p>
+            </div>
+
+            <!-- Article Footer -->
+            <div class="border-t border-gray-200 pt-8 mt-12">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">تقنية الذكاء الاصطناعي</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">الأطراف الصناعية</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">الابتكار الصحي</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">البحث الطبي</span>
+                    </div>
+
+                    <!-- Share Buttons -->
+                    <div class="flex items-center space-x-4">
+                        <span class="text-gray-600 font-medium">مشاركة:</span>
+                        <button class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
+                        <button class="w-10 h-10 bg-blue-400 text-white rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </button>
+                        <button class="w-10 h-10 bg-blue-700 text-white rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </button>
+                        <button class="w-10 h-10 bg-gray-600 text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Related Articles -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">مقالات ذات صلة</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Related Article 1 -->
+                <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="http://medicare-alliance.com/wp-content/uploads/2017/09/TranshumeralProsthesis.png" 
+                             alt="مقال ذو صلة" 
+                             class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">شراكة</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-4 text-sm text-gray-500 mb-3">
+                            <span>18 مارس، 2025</span>
+                            <span>•</span>
+                            <span>4 دقائق قراءة</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
+                            تحالف استراتيجي مع شبكة الرعاية الصحية العالمية
+                        </h3>
+                        <p class="text-gray-600 mb-4">توسيع نطاق وصولنا لخدمة المرضى في 15 دولة جديدة من خلال اتفاقيات الشراكة المبتكرة.</p>
+                        <a href="#" class="inline-flex items-center space-x-2 text-primary-600 font-medium hover:text-primary-700 transition-colors">
+                            <span>اقرأ المزيد</span>
+                            <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Related Article 2 -->
+                <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/1170979/pexels-photo-1170979.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" 
+                             alt="Related Article" 
+                             class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">Research</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-4 text-sm text-gray-500 mb-3">
+                            <span>March 15, 2025</span>
+                            <span>•</span>
+                            <span>6 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
+                            Clinical Trial Results Show 40% Improvement
+                        </h3>
+                        <p class="text-gray-600 mb-4">Latest rehabilitation protocols demonstrate significant improvements in patient recovery times and outcomes.</p>
+                        <a href="#" class="inline-flex items-center space-x-2 text-primary-600 font-medium hover:text-primary-700 transition-colors">
+                            <span>Read More</span>
+                            <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Related Article 3 -->
+                <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" 
+                             alt="Related Article" 
+                             class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Innovation</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-4 text-sm text-gray-500 mb-3">
+                            <span>March 10, 2025</span>
+                            <span>•</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
+                            Smart Sensors Revolutionize Prosthetic Control
+                        </h3>
+                        <p class="text-gray-600 mb-4">New sensor technology enables more intuitive control of prosthetic devices through advanced machine learning.</p>
+                        <a href="#" class="inline-flex items-center space-x-2 text-primary-600 font-medium hover:text-primary-700 transition-colors">
+                            <span>Read More</span>
+                            <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section (Above Footer) -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">موقعنا</h2>
+                <p class="text-xl text-gray-600">زورونا في مقرنا الرئيسي في الرياض</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Map -->
+                <div class="relative h-96 rounded-2xl overflow-hidden shadow-lg">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.397!2d46.7070681!3d24.6673385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2s2862%20Ahmad%20Al%20Hawwari%20St%2C%20Al%20Murabba%2C%20Riyadh%2012626%2C%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1647834567890!5m2!1sen!2sus"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">معلومات الاتصال</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4 space-x-reverse">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">العنوان</h4>
+                                    <p class="text-gray-600">2862 Ahmad Al Hawwari St, Al Murabba, Riyadh 12626 6360</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4 space-x-reverse">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">الهاتف</h4>
+                                    <p class="text-gray-600">+966 11 406 8868</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4 space-x-reverse">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">البريد الإلكتروني</h4>
+                                    <p class="text-gray-600">info@medicare-alliance.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4 space-x-reverse">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-clock text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">ساعات العمل</h4>
+                                    <p class="text-gray-600">الأحد - الخميس: 8:00 ص - 6:00 م</p>
+                                    <p class="text-gray-600">الجمعة: 2:00 م - 6:00 م</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-primary-50 rounded-2xl p-6">
+                        <h4 class="font-semibold text-primary-900 mb-3">احجز موعدك الآن</h4>
+                        <p class="text-primary-700 mb-4">احصل على استشارة مجانية مع خبرائنا المتخصصين</p>
+                        <button onclick="openAppointmentModal()" class="w-full bg-primary-600 text-white py-3 px-6 rounded-full font-semibold hover:bg-primary-700 transition-colors">
+                            احجز موعد
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as other pages) -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary-600 to-medical-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-heartbeat text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">تحالف الرعاية الطبية</h3>
+                            <p class="text-gray-400 text-sm">حلول الرعاية الصحية المتقدمة</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">مؤسسة رائدة في تقديم حلول الرعاية الصحية المبتكرة، مكرسة لتحسين نتائج المرضى وجودة الحياة.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/cpo.mca" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com/CPO_MCA" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/medical-care-alliance" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/cpo_mca/" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">روابط سريعة</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors">الرئيسية</a></li>
+                        <li><a href="products.html" class="text-gray-300 hover:text-white transition-colors">المنتجات والخدمات</a></li>
+                        <li><a href="news.html" class="text-gray-300 hover:text-white transition-colors">الأخبار</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">عن الشركة</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">معلومات الاتصال</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-primary-400"></i>
+                            <span class="text-gray-300">2862 Ahmad Al Hawwari St, Al Murabba, Riyadh 12626 6360</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-primary-400"></i>
+                            <span class="text-gray-300">+966 11 406 8868</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-primary-400"></i>
+                            <span class="text-gray-300">info@medicare-alliance.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 تحالف الرعاية الطبية. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

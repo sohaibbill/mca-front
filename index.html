@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحالف الرعاية الطبية - حلول الرعاية الصحية المتقدمة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        medical: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        green: {
+                            400: '#8cc643',
+                            500: '#7bb93d',
+                            600: '#6aa637'
+                        }
+                    },
+                    fontFamily: {
+                        'arabic': ['IBM Plex Sans Arabic', 'system-ui', 'sans-serif'],
+                        'sans': ['IBM Plex Sans Arabic', 'Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="font-arabic bg-white" dir="rtl">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary-600 to-medical-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-heartbeat text-white text-xl"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <h1 class="text-xl font-bold text-gray-900">تحالف الرعاية الطبية</h1>
+                        <p class="text-xs text-gray-500">حلول الرعاية الصحية المتقدمة</p>
+                    </div>
+                </div>
+                <!-- Navigation Links -->
+                <div class="hidden lg:flex items-center space-x-6 space-x-reverse">
+                    <a href="#about" class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200">من نحن</a>
+                    <a href="#services" class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200">الخدمات</a>
+                    <a href="products.html" class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200">المنتجات</a>
+                    <a href="news.html" class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200">الأخبار</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200">اتصل بنا</a>
+                </div>
+                <!-- Search and Actions -->
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <div class="relative hidden md:block">
+                        <input type="text" placeholder="البحث في المنتجات..." class="w-48 pr-4 pl-12 py-2 bg-gray-50 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-primary-500 text-right">
+                        <button class="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-primary-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-search text-white text-sm"></i>
+                        </button>
+                    </div>
+                    <button onclick="openModal('appointmentModal')" class="hidden md:inline-flex items-center bg-primary-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-primary-700 transition-all duration-200">
+                        <i class="fas fa-calendar-check ml-2"></i> احجز موعد
+                    </button>
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden p-2 text-gray-600 hover:text-primary-600 transition-colors" id="mobileMenuBtn">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Video -->
+    <section class="relative h-screen overflow-hidden">
+    <!-- Video Background -->
+    <video class="absolute inset-0 w-full h-full object-cover" src="public/5083820_1.mp4" autoplay loop muted playsinline poster="http://medicare-alliance.com/wp-content/themes/mca/assets/img/content/intro.png"></video>
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-l from-primary-900/80 via-primary-800/60 to-transparent"></div>
+    <!-- Fallback image for accessibility -->
+    <img src="http://medicare-alliance.com/wp-content/themes/mca/assets/img/content/intro.png" alt="تحالف الرعاية الطبية" class="w-full h-full object-cover absolute inset-0 pointer-events-none opacity-0" aria-hidden="true">
+
+        <!-- Content -->
+        <div class="relative z-10 h-full flex items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mr-auto">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center space-x-2 space-x-reverse bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span class="text-white text-sm font-medium">تحالف الرعاية الطبية</span>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h1 class="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                        سواء كان شخص واحد من يعاني أو الملايين،  
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">فهذه</span> 
+                        مسؤوليتنا.
+                    </h1>
+
+                    <!-- Description -->
+                    <p class="text-xl text-gray-200 mb-8 leading-relaxed max-w-2xl">
+                        تحالف الرعاية الطبية يوفر حلول الرعاية الصحية الشاملة بما في ذلك الأطراف الصناعية والجبائر وخدمات التأهيل والمعدات الطبية.
+                    </p>
+
+                    <!-- CTA Button -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="openModal('appointmentModal')" class="bg-primary-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 space-x-reverse">
+                            <span>احجز موعد</span>
+                            <i class="fas fa-calendar-plus"></i>
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-primary-600 transition-all duration-200 flex items-center justify-center space-x-2 space-x-reverse">
+                            <i class="fas fa-play"></i>
+                            <span>شاهد الفيديو</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="absolute right-8 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-200">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <button class="absolute left-8 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-200">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-gray-50" id="about">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-green-400 mb-6">اكتشف تحالف الرعاية الطبية</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                        مؤسسة تحالف الرعاية الطبية من المؤسسات الرائدة بمجال تقديم خدمات الأطراف الصناعية وجبائر تقويم العظام التي تخدم ذوي الإعاقة الحركية وذوي البتور ومن يعانون من مشاكل القدم والعمود الفقري و تقوم المؤسسة بدور فعال كممثل مبيعات وتسويق للأجهزة الطبية المصنعة من قبل الشركات العالمية الرائدة والتي تستهدف الأمراض المزمنة وكذلك الوراثية والمضاعفات المتصلة بها في المملكة العربية السعودية و دول مجلس التعاون الخليجي الأخرى ونسعى جاهدين لتوفير المنتجات والحلول المبتكرة عالميا لفئة المرضى المستهدفين وذلك لتحقيق حياة صحية أفضل.
+                    </p>
+                    
+                    <!-- Statistics -->
+                    <div class="grid grid-cols-3 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary-600 mb-2">15+</div>
+                            <p class="text-gray-600">سنة خبرة</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary-600 mb-2">5000+</div>
+                            <p class="text-gray-600">مريض</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary-600 mb-2">50+</div>
+                            <p class="text-gray-600">متخصص</p>
+                        </div>
+                    </div>
+                    
+                    <button onclick="openModal('appointmentModal')" class="bg-primary-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl">
+                        احجز استشارة مجانية
+                    </button>
+                </div>
+                <div>
+                    <img src="http://medicare-alliance.com/wp-content/uploads/2017/08/hand.png" alt="الأطراف الصناعية" class="w-full h-auto rounded-2xl shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-white" id="services">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-primary-600 mb-4">خدماتنا المتخصصة</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">نقدم مجموعة شاملة من الخدمات الطبية المتخصصة لتحسين جودة الحياة</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1: Prosthetics -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border-b-4 border-primary-600 hover:border-green-400">
+                    <div class="p-8 text-center">
+                        <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <img src="http://medicare-alliance.com/wp-content/uploads/2017/08/Through-Hip-Prosthesis-1.png" alt="الأطراف الصناعية" class="w-12 h-12 object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">خدمة الأطراف الصناعية والجبائر</h3>
+                        <p class="text-gray-600 leading-relaxed">تصنيع وتركيب الأطراف الصناعية العلوية والسفلية والجبائر التصحيحية المخصصة لكل مريض</p>
+                    </div>
+                </div>
+
+                <!-- Service 2: Medical Devices -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border-b-4 border-primary-600 hover:border-green-400">
+                    <div class="p-8 text-center">
+                        <div class="w-16 h-16 bg-medical-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <img src="http://medicare-alliance.com/wp-content/uploads/2017/09/LDL-Apheresis-Machine-Liposorber-MA-03-Machine-1-1.png" alt="الأجهزة الطبية" class="w-12 h-12 object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">الأجهزة الطبية</h3>
+                        <p class="text-gray-600 leading-relaxed">أحدث الأجهزة الطبية لعلاج الأمراض المزمنة والنادرة ومضاعفاتها</p>
+                    </div>
+                </div>
+
+                <!-- Service 3: Dental Supplies -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border-b-4 border-primary-600 hover:border-green-400">
+                    <div class="p-8 text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <img src="http://medicare-alliance.com/wp-content/uploads/2017/08/Picture1-1.jpg" alt="مستلزمات الأسنان" class="w-12 h-12 object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">مستلزمات الأسنان</h3>
+                        <p class="text-gray-600 leading-relaxed">جميع المستلزمات والمواد المستخدمة في طب الأسنان الترميمي والعلاجي</p>
+                    </div>
+                </div>
+
+                <!-- Service 4: Consultation -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border-b-4 border-primary-600 hover:border-green-400">
+                    <div class="p-8 text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <img src="http://medicare-alliance.com/wp-content/uploads/2017/08/dvdv-1.jpg" alt="خدمة الاستشارات" class="w-12 h-12 object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">خدمة الاستشارات</h3>
+                        <p class="text-gray-600 leading-relaxed">استشارات طبية متخصصة وتقييم شامل للحالات المختلفة</p>
+                    </div>
+                </div>
+
+                <!-- Service 5: Wheelchairs -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border-b-4 border-primary-600 hover:border-green-400">
+                    <div class="p-8 text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <img src="http://medicare-alliance.com/wp-content/uploads/2017/09/123.jpg" alt="الكراسي المتحركة" class="w-12 h-12 object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">مستلزمات التأهيل الطبي</h3>
+                        <p class="text-gray-600 leading-relaxed">الكراسي المتحركة وأجهزة التأهيل الطبي المتطورة</p>
+                    </div>
+                </div>
+
+                <!-- Service 6: Raw Materials -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border-b-4 border-primary-600 hover:border-green-400">
+                    <div class="p-8 text-center">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <img src="http://medicare-alliance.com/wp-content/uploads/2017/09/2-1.jpg" alt="المواد الأولية" class="w-12 h-12 object-contain">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">المواد الأولية والمكونات</h3>
+                        <p class="text-gray-600 leading-relaxed">توفير المواد الأولية والمعدات اللازمة لتصنيع الجبائر والأطراف الاصطناعية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">منتجاتنا المميزة</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">اكتشف أحدث ابتكاراتنا في تقنيات الأطراف الصناعية والجبائر المصممة لتحسين الحركة وجودة الحياة</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="http://medicare-alliance.com/wp-content/uploads/2017/08/Corrective-Insoles.jpg" 
+                             onload="this.style.opacity=1" 
+                             onerror="this.src='https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'"
+                             alt="فرشات الأحذية الطبية التصحيحية" 
+                             class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 opacity-0"
+                             style="transition: opacity 0.3s ease;">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-medium">جديد</span>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <button class="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-600 hover:text-red-500 transition-colors">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 space-x-reverse mb-3">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">أحذية طبية</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">فرشات الأحذية الطبية التصحيحية</h3>
+                        <p class="text-gray-600 mb-4">تقوم بتخفيف الضغط من على رأسي المشط الثاني والثالث وتوفر الثبات وتقليل الضغط</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-primary-600">استفسر عن السعر</span>
+                            <a href="product-detail.html" class="bg-primary-600 text-white px-6 py-2 rounded-full hover:bg-primary-700 transition-colors">
+                                عرض التفاصيل
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="http://medicare-alliance.com/wp-content/uploads/2017/10/1468326666p1-250x250.png" 
+                             onload="this.style.opacity=1" 
+                             onerror="this.src='https://images.pexels.com/photos/1170979/pexels-photo-1170979.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'"
+                             alt="طرف سفلي فوق الركبة" 
+                             class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 opacity-0"
+                             style="transition: opacity 0.3s ease;">
+                        <div class="absolute top-4 left-4">
+                            <button class="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-600 hover:text-red-500 transition-colors">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 space-x-reverse mb-3">
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">أطراف سفلية</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">طرف سفلي فوق الركبة</h3>
+                        <p class="text-gray-600 mb-4">منتج عالي الجودة يتم تصنيعه حسب الطلب للمرضى الذين يعانون من بتر فوق مفصل الركبة</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-primary-600">استفسر عن السعر</span>
+                            <a href="product-detail.html" class="bg-primary-600 text-white px-6 py-2 rounded-full hover:bg-primary-700 transition-colors">
+                                عرض التفاصيل
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+                             alt="جبائر مفصل الرسغ" 
+                             class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">الأكثر طلباً</span>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <button class="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-red-500">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 space-x-reverse mb-3">
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-medium">جبائر</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">جبائر مفصل الرسغ</h3>
+                        <p class="text-gray-600 mb-4">منتج ديناميكي وفعال لليد والساعد لتصحيح انحراف اليد ومنع حركة تقفع المعصم</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-primary-600">استفسر عن السعر</span>
+                            <a href="product-detail.html" class="bg-primary-600 text-white px-6 py-2 rounded-full hover:bg-primary-700 transition-colors">
+                                عرض التفاصيل
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="products.html" class="inline-flex items-center space-x-2 space-x-reverse bg-primary-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl">
+                    <span>عرض جميع المنتجات</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">آخر الأخبار والتحديثات</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">ابق على اطلاع بأحدث التطورات في تقنيات الرعاية الصحية والابتكارات الطبية</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- News Card 1 -->
+                <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+                             alt="شهادة الاعتماد الدولي" 
+                             class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">إنجاز</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-4 space-x-reverse text-sm text-gray-500 mb-3">
+                            <span>30 ديسمبر 2017</span>
+                            <span>•</span>
+                            <span>5 دقائق قراءة</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
+                            حصول مركز رعاية على شهادة الاعتماد الدولي الأمريكية (BOC)
+                        </h3>
+                        <p class="text-gray-600 mb-4">أول مركز في الشرق الأوسط والخليج يحصل على هذه الشهادة المرموقة في مجال الأطراف الصناعية والجبائر</p>
+                        <a href="news-detail.html" class="inline-flex items-center space-x-2 space-x-reverse text-primary-600 font-medium hover:text-primary-700 transition-colors">
+                            <span>اقرأ المزيد</span>
+                            <i class="fas fa-arrow-left text-sm"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- News Card 2 -->
+                <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/4386476/pexels-photo-4386476.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" 
+                             alt="البتور بسبب مرض السكري" 
+                             class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">صحة</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-4 space-x-reverse text-sm text-gray-500 mb-3">
+                            <span>27 ديسمبر 2017</span>
+                            <span>•</span>
+                            <span>7 دقائق قراءة</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
+                            البتور بسبب مرض السكري
+                        </h3>
+                        <p class="text-gray-600 mb-4">معلومات مهمة حول العلاقة بين مرض السكري وإصابات القدم والوقاية من المضاعفات</p>
+                        <a href="news-detail.html" class="inline-flex items-center space-x-2 space-x-reverse text-primary-600 font-medium hover:text-primary-700 transition-colors">
+                            <span>اقرأ المزيد</span>
+                            <i class="fas fa-arrow-left text-sm"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- News Card 3 -->
+                <article class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/1170979/pexels-photo-1170979.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" 
+                             alt="أسباب حالات البتور" 
+                             class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium">إحصائيات</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-4 space-x-reverse text-sm text-gray-500 mb-3">
+                            <span>27 ديسمبر 2017</span>
+                            <span>•</span>
+                            <span>6 دقائق قراءة</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
+                            أسباب حالات البتور بالمملكة العربية السعودية
+                        </h3>
+                        <p class="text-gray-600 mb-4">دراسة شاملة حول أهم أسباب حدوث البتر للأطراف وطرق الوقاية والعلاج</p>
+                        <a href="news-detail.html" class="inline-flex items-center space-x-2 space-x-reverse text-primary-600 font-medium hover:text-primary-700 transition-colors">
+                            <span>اقرأ المزيد</span>
+                            <i class="fas fa-arrow-left text-sm"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="news.html" class="inline-flex items-center space-x-2 space-x-reverse bg-primary-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl">
+                    <span>عرض جميع الأخبار</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">شركاء النجاح</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 items-center justify-center">
+                <div class="flex justify-center">
+                    <img src="http://medicare-alliance.com/wp-content/uploads/2017/10/s.jpg" alt="شريك" class="h-16 object-contain opacity-60 hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex justify-center">
+                    <img src="http://medicare-alliance.com/wp-content/uploads/2017/10/v.jpg" alt="شريك" class="h-16 object-contain opacity-60 hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex justify-center">
+                    <img src="http://medicare-alliance.com/wp-content/uploads/2017/10/3-1.jpg" alt="شريك" class="h-16 object-contain opacity-60 hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex justify-center">
+                    <img src="http://medicare-alliance.com/wp-content/uploads/2017/10/سب.jpg" alt="شريك" class="h-16 object-contain opacity-60 hover:opacity-100 transition-opacity">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Courses Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">دورات تدريبية متخصصة</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">اكتشف مجموعتنا المتنوعة من الدورات التدريبية في مجال الرعاية الصحية والأطراف الصناعية</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/6823567/pexels-photo-6823567.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="دورة الأطراف الصناعية المتقدمة" 
+                             class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-medium">متقدم</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">دورة الأطراف الصناعية المتقدمة</h3>
+                        <p class="text-gray-600 mb-4">تعلم أحدث التقنيات في مجال تصميم وتركيب الأطراف الصناعية</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary-600 font-semibold">12 أسبوع</span>
+                            <a href="course-detail.html" class="bg-primary-600 text-white px-4 py-2 rounded-full hover:bg-primary-700 transition-colors">
+                                تفاصيل الدورة
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/7659564/pexels-photo-7659564.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="دورة تقويم العظام" 
+                             class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">للمبتدئين</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">دورة تقويم العظام الأساسية</h3>
+                        <p class="text-gray-600 mb-4">تعرف على أساسيات تقويم العظام والجبائر الطبية</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary-600 font-semibold">8 أسابيع</span>
+                            <a href="course-detail.html" class="bg-primary-600 text-white px-4 py-2 rounded-full hover:bg-primary-700 transition-colors">
+                                تفاصيل الدورة
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/7088530/pexels-photo-7088530.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="دورة التأهيل الحركي" 
+                             class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">تخصصي</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">دورة التأهيل الحركي الشامل</h3>
+                        <p class="text-gray-600 mb-4">برنامج متكامل في التأهيل الحركي وإعادة التأهيل</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary-600 font-semibold">10 أسابيع</span>
+                            <a href="course-detail.html" class="bg-primary-600 text-white px-4 py-2 rounded-full hover:bg-primary-700 transition-colors">
+                                تفاصيل الدورة
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="courses.html" class="inline-flex items-center space-x-2 space-x-reverse bg-primary-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl">
+                    <span>استعرض جميع الدورات</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">عملاؤنا</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+                <div class="flex justify-center">
+                    <img src="http://medicare-alliance.com/wp-content/uploads/2017/10/Picture2.jpg" alt="عميل" class="h-16 object-contain opacity-60 hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex justify-center">
+                    <img src="http://medicare-alliance.com/wp-content/uploads/2017/10/Picture6.png" alt="عميل" class="h-16 object-contain opacity-60 hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex justify-center">
+                    <img src="http://medicare-alliance.com/wp-content/uploads/2017/10/Picture1.jpg" alt="عميل" class="h-16 object-contain opacity-60 hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex justify-center">
+                    <img src="http://medicare-alliance.com/wp-content/uploads/2017/10/Picture3.jpg" alt="عميل" class="h-16 object-contain opacity-60 hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex justify-center">
+                    <img src="http://medicare-alliance.com/wp-content/uploads/2017/10/Picture5.png" alt="عميل" class="h-16 object-contain opacity-60 hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex justify-center">
+                    <img src="http://medicare-alliance.com/wp-content/uploads/2017/10/Picture4.jpg" alt="عميل" class="h-16 object-contain opacity-60 hover:opacity-100 transition-opacity">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section (Above Footer) -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">موقعنا</h2>
+                <p class="text-xl text-gray-600">زورونا في مقرنا الرئيسي في الرياض</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Map -->
+                <div class="relative h-96 rounded-2xl overflow-hidden shadow-lg">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.397!2d46.7070681!3d24.6673385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2s2862%20Ahmad%20Al%20Hawwari%20St%2C%20Al%20Murabba%2C%20Riyadh%2012626%2C%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1647834567890!5m2!1sen!2sus"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">معلومات الاتصال</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4 space-x-reverse">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">العنوان</h4>
+                                    <p class="text-gray-600">2862 Ahmad Al Hawwari St, Al Murabba, Riyadh 12626 6360</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4 space-x-reverse">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">الهاتف</h4>
+                                    <p class="text-gray-600">+966 11 406 8868</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4 space-x-reverse">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">البريد الإلكتروني</h4>
+                                    <p class="text-gray-600">info@medicare-alliance.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4 space-x-reverse">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-clock text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">ساعات العمل</h4>
+                                    <p class="text-gray-600">الأحد - الخميس: 8:00 ص - 6:00 م</p>
+                                    <p class="text-gray-600">الجمعة: 2:00 م - 6:00 م</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-primary-50 rounded-2xl p-6">
+                        <h4 class="font-semibold text-primary-900 mb-3">احجز موعدك الآن</h4>
+                        <p class="text-primary-700 mb-4">احصل على استشارة مجانية مع خبرائنا المتخصصين</p>
+                        <button onclick="openAppointmentModal()" class="w-full bg-primary-600 text-white py-3 px-6 rounded-full font-semibold hover:bg-primary-700 transition-colors">
+                            احجز موعد
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Footer (Same as other pages) -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary-600 to-medical-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-heartbeat text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">تحالف الرعاية الطبية</h3>
+                            <p class="text-gray-400 text-sm">حلول الرعاية الصحية المتقدمة</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">مؤسسة رائدة في تقديم حلول الرعاية الصحية المبتكرة، مكرسة لتحسين نتائج المرضى وجودة الحياة.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/cpo.mca" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com/CPO_MCA" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/medical-care-alliance" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/cpo_mca/" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">روابط سريعة</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors">الرئيسية</a></li>
+                        <li><a href="products.html" class="text-gray-300 hover:text-white transition-colors">المنتجات والخدمات</a></li>
+                        <li><a href="news.html" class="text-gray-300 hover:text-white transition-colors">الأخبار</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">عن الشركة</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">معلومات الاتصال</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-primary-400"></i>
+                            <span class="text-gray-300">2862 Ahmad Al Hawwari St, Al Murabba, Riyadh 12626 6360</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-primary-400"></i>
+                            <span class="text-gray-300">+966 11 406 8868</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-primary-400"></i>
+                            <span class="text-gray-300">info@medicare-alliance.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 تحالف الرعاية الطبية. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Appointment Booking Modal -->
+    <div id="appointmentModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b border-gray-200">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-900">حجز موعد</h2>
+                    <button onclick="closeModal('appointmentModal')" class="text-gray-400 hover:text-gray-600 transition-colors">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <form id="appointmentForm" class="p-6 space-y-6">
+                <!-- Personal Information -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">الاسم الأول *</label>
+                        <input type="text" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-right">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">اسم العائلة *</label>
+                        <input type="text" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-right">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">رقم الهاتف *</label>
+                        <input type="tel" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-right" placeholder="+966 5X XXX XXXX">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">البريد الإلكتروني</label>
+                        <input type="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-right">
+                    </div>
+                </div>
+
+                <!-- Service Selection -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">نوع الخدمة المطلوبة *</label>
+                    <select name="service" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-right">
+                        <option value="">اختر الخدمة</option>
+                        <option value="prosthetics">الأطراف الصناعية</option>
+                        <option value="orthotics">الجبائر التصحيحية</option>
+                        <option value="medical-devices">الأجهزة الطبية</option>
+                        <option value="dental">مستلزمات الأسنان</option>
+                        <option value="consultation">استشارة طبية</option>
+                        <option value="rehabilitation">التأهيل الطبي</option>
+                    </select>
+                </div>
+
+                <!-- Date and Time Selection -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">التاريخ المفضل *</label>
+                        <input type="date" name="preferredDate" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-right" min="">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">الوقت المفضل *</label>
+                        <select name="preferredTime" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-right">
+                            <option value="">اختر الوقت</option>
+                            <option value="09:00">09:00 صباحاً</option>
+                            <option value="10:00">10:00 صباحاً</option>
+                            <option value="11:00">11:00 صباحاً</option>
+                            <option value="12:00">12:00 ظهراً</option>
+                            <option value="13:00">01:00 مساءً</option>
+                            <option value="14:00">02:00 مساءً</option>
+                            <option value="15:00">03:00 مساءً</option>
+                            <option value="16:00">04:00 مساءً</option>
+                            <option value="17:00">05:00 مساءً</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Location Selection -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">الموقع *</label>
+                    <select name="location" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-right">
+                        <option value="">اختر الموقع</option>
+                        <option value="riyadh">الرياض - المقر الرئيسي</option>
+                        <option value="jeddah">جدة</option>
+                        <option value="dammam">الدمام</option>
+                        <option value="home-visit">زيارة منزلية</option>
+                    </select>
+                </div>
+
+                <!-- Additional Notes -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">ملاحظات إضافية</label>
+                    <textarea name="notes" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-right" placeholder="أي معلومات إضافية تود مشاركتها..."></textarea>
+                </div>
+
+                <!-- Availability Check -->
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <button type="button" id="checkAvailabilityBtn" class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors mb-4">
+                        <i class="fas fa-calendar-check ml-2"></i>
+                        تحقق من التوفر
+                    </button>
+                    <div id="availabilityResult" class="hidden">
+                        <div class="flex items-center space-x-2 space-x-reverse text-green-600">
+                            <i class="fas fa-check-circle"></i>
+                            <span class="font-medium">الموعد متاح!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button type="button" onclick="closeModal('appointmentModal')" class="flex-1 border-2 border-gray-300 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+                        إلغاء
+                    </button>
+                    <button type="submit" class="flex-1 bg-primary-600 text-white py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+                        تأكيد الحجز
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Set minimum date to today
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.querySelector('input[name="preferredDate"]');
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.min = today;
+        });
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Check availability functionality
+        document.getElementById('checkAvailabilityBtn').addEventListener('click', function() {
+            const btn = this;
+            const result = document.getElementById('availabilityResult');
+            
+            // Show loading state
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin ml-2"></i> جاري التحقق...';
+            btn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                result.classList.remove('hidden');
+                btn.innerHTML = '<i class="fas fa-calendar-check ml-2"></i> تحقق من التوفر';
+                btn.disabled = false;
+            }, 2000);
+        });
+
+        // Form submission
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            alert('تم إرسال طلب الحجز بنجاح! سنتواصل معك قريباً لتأكيد الموعد.');
+            closeModal('appointmentModal');
+            
+            // Reset form
+            this.reset();
+            document.getElementById('availabilityResult').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

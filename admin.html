@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCA Admin Dashboard - Medical Care Alliance</title>
+    <meta name="description" content="Administrative dashboard for Medical Care Alliance content management system">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar" id="adminSidebar">
+        <div class="sidebar-header">
+            <div class="admin-logo">
+                <img src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop" alt="MCA Admin">
+                <span>MCA Admin</span>
+            </div>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul class="nav-menu">
+                <li class="nav-item active">
+                    <a href="#dashboard" class="nav-link" data-section="dashboard">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#users" class="nav-link" data-section="users">
+                        <i class="fas fa-users"></i>
+                        <span>User Management</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu" class="nav-link" data-section="menu">
+                        <i class="fas fa-bars"></i>
+                        <span>Menu Management</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#content" class="nav-link" data-section="content">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Content Management</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#catalog" class="nav-link" data-section="catalog">
+                        <i class="fas fa-folder"></i>
+                        <span>Catalog Management</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#academy" class="nav-link" data-section="academy">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Academy Management</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#careers" class="nav-link" data-section="careers">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Career Management</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#appointments" class="nav-link" data-section="appointments">
+                        <i class="fas fa-calendar"></i>
+                        <span>Appointments</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#newsletter" class="nav-link" data-section="newsletter">
+                        <i class="fas fa-envelope"></i>
+                        <span>Newsletter</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#support" class="nav-link" data-section="support">
+                        <i class="fas fa-headset"></i>
+                        <span>Support Tickets</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="admin-user">
+                <img src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop" alt="Admin User" class="admin-avatar">
+                <div class="admin-info">
+                    <span class="admin-name">John Admin</span>
+                    <span class="admin-role">Administrator</span>
+                </div>
+                <button class="logout-btn" title="Logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <!-- Top Header -->
+        <header class="admin-header">
+            <div class="header-left">
+                <button class="mobile-sidebar-toggle" id="mobileSidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="page-title" id="pageTitle">Dashboard</h1>
+            </div>
+            
+            <div class="header-right">
+                <div class="header-actions">
+                    <button class="header-btn" id="notificationsBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">5</span>
+                    </button>
+                    <button class="header-btn" id="settingsBtn">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="ar">AR</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="admin-content" id="adminContent">
+            <!-- Dashboard Section -->
+            <section class="content-section active" id="dashboard-section">
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>2,847</h3>
+                            <p>Total Users</p>
+                            <span class="stat-change positive">+12% this month</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>1,254</h3>
+                            <p>Appointments</p>
+                            <span class="stat-change positive">+8% this week</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>3,678</h3>
+                            <p>Product Views</p>
+                            <span class="stat-change negative">-3% this month</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>89</h3>
+                            <p>Support Tickets</p>
+                            <span class="stat-change neutral">Same as last week</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-charts">
+                    <div class="chart-container">
+                        <h3>User Registrations</h3>
+                        <div class="chart-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                            <p>Chart integration would go here</p>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Appointment Bookings</h3>
+                        <div class="chart-placeholder">
+                            <i class="fas fa-chart-bar"></i>
+                            <p>Chart integration would go here</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>New user registered:</strong> Sarah Johnson</p>
+                                <span class="activity-time">5 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-calendar"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>Appointment booked:</strong> Michael Brown - Prosthetic Consultation</p>
+                                <span class="activity-time">12 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>Content updated:</strong> About Us page modified</p>
+                                <span class="activity-time">1 hour ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- User Management Section -->
+            <section class="content-section" id="users-section">
+                <div class="section-header">
+                    <h2>User Management</h2>
+                    <button class="btn btn-primary" id="addUserBtn">
+                        <i class="fas fa-plus"></i> Add New User
+                    </button>
+                </div>
+
+                <div class="filters-bar">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search users..." id="userSearch">
+                    </div>
+                    <div class="filter-controls">
+                        <select id="userStatusFilter">
+                            <option value="all">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                        <select id="userRoleFilter">
+                            <option value="all">All Roles</option>
+                            <option value="patient">Patient</option>
+                            <option value="healthcare">Healthcare Provider</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Registration Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTableBody">
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <img src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop" alt="User" class="user-avatar">
+                                        <span>John Doe</span>
+                                    </div>
+                                </td>
+                                <td>john.doe@email.com</td>
+                                <td><span class="badge badge-info">Patient</span></td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>Mar 15, 2025</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-icon" title="View"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon" title="Delete"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- More user rows would be dynamically generated -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <button class="pagination-btn" disabled>Previous</button>
+                    <span class="pagination-info">1 of 10</span>
+                    <button class="pagination-btn">Next</button>
+                </div>
+            </section>
+
+            <!-- Content Management Section -->
+            <section class="content-section" id="content-section">
+                <div class="section-header">
+                    <h2>Content Management</h2>
+                    <button class="btn btn-primary" id="addContentBtn">
+                        <i class="fas fa-plus"></i> Create New Page
+                    </button>
+                </div>
+
+                <div class="content-editor">
+                    <div class="editor-toolbar">
+                        <button class="editor-btn" title="Bold"><i class="fas fa-bold"></i></button>
+                        <button class="editor-btn" title="Italic"><i class="fas fa-italic"></i></button>
+                        <button class="editor-btn" title="Underline"><i class="fas fa-underline"></i></button>
+                        <button class="editor-btn" title="Link"><i class="fas fa-link"></i></button>
+                        <button class="editor-btn" title="Image"><i class="fas fa-image"></i></button>
+                        <button class="editor-btn" title="List"><i class="fas fa-list"></i></button>
+                    </div>
+                    <textarea class="editor-textarea" placeholder="Start writing your content here..."></textarea>
+                </div>
+
+                <div class="content-pages">
+                    <h3>Existing Pages</h3>
+                    <div class="pages-grid">
+                        <div class="page-card">
+                            <div class="page-preview">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="page-info">
+                                <h4>About Us</h4>
+                                <p>Company information and history</p>
+                                <div class="page-meta">
+                                    <span>Last updated: Mar 10, 2025</span>
+                                    <div class="page-actions">
+                                        <button class="btn-small">Edit</button>
+                                        <button class="btn-small btn-outline">Preview</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- More page cards would be dynamically generated -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appointments Section -->
+            <section class="content-section" id="appointments-section">
+                <div class="section-header">
+                    <h2>Appointment Management</h2>
+                    <div class="header-actions">
+                        <button class="btn btn-outline" id="exportAppointments">
+                            <i class="fas fa-download"></i> Export
+                        </button>
+                        <button class="btn btn-primary" id="addAppointmentBtn">
+                            <i class="fas fa-plus"></i> New Appointment
+                        </button>
+                    </div>
+                </div>
+
+                <div class="appointment-calendar">
+                    <div class="calendar-header">
+                        <button class="calendar-nav" id="prevMonth">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <h3 id="currentMonth">March 2025</h3>
+                        <button class="calendar-nav" id="nextMonth">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="calendar-grid">
+                        <!-- Calendar would be dynamically generated -->
+                        <div class="calendar-placeholder">
+                            <i class="fas fa-calendar-alt"></i>
+                            <p>Interactive calendar would be implemented here</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="appointments-list">
+                    <h3>Today's Appointments</h3>
+                    <div class="appointment-items">
+                        <div class="appointment-item">
+                            <div class="appointment-time">
+                                <span class="time">09:00 AM</span>
+                                <span class="duration">60 min</span>
+                            </div>
+                            <div class="appointment-details">
+                                <h4>Sarah Johnson</h4>
+                                <p>Prosthetic Consultation</p>
+                                <span class="appointment-type">Initial Assessment</span>
+                            </div>
+                            <div class="appointment-status">
+                                <span class="status-badge confirmed">Confirmed</span>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="btn-icon" title="View Details"><i class="fas fa-eye"></i></button>
+                                <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+                                <button class="btn-icon" title="Cancel"><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                        <!-- More appointment items would be dynamically generated -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal for Add/Edit User -->
+    <div class="modal" id="userModal">
+        <div class="modal-content large">
+            <span class="close" id="closeUserModal">&times;</span>
+            <div class="modal-header">
+                <h2 id="userModalTitle">Add New User</h2>
+            </div>
+            <div class="modal-body">
+                <form id="userForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="userEmail">Email Address</label>
+                            <input type="email" id="userEmail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userPhone">Phone Number</label>
+                            <input type="tel" id="userPhone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="userRole">Role</label>
+                            <select id="userRole" name="role" required>
+                                <option value="">Select Role</option>
+                                <option value="patient">Patient</option>
+                                <option value="healthcare">Healthcare Provider</option>
+                                <option value="employee">Employee</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="userStatus">Status</label>
+                            <select id="userStatus" name="status" required>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="cancelUserForm">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save User</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

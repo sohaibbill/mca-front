@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دورة الأطراف الصناعية المتقدمة - تحالف الرعاية الطبية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/course.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        medical: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        },
+                    },
+                    fontFamily: {
+                        'arabic': ['IBM Plex Sans Arabic', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .course-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .course-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        .course-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        .course-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="font-arabic bg-white">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary-600 to-medical-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-heartbeat text-white text-xl"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <h1 class="text-xl font-bold text-gray-900">تحالف الرعاية الطبية</h1>
+                        <p class="text-xs text-gray-500">حلول الرعاية الصحية المتقدمة</p>
+                    </div>
+                </div>
+                <div class="hidden lg:flex items-center space-x-6 space-x-reverse">
+                    <a href="index.html#about" class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200">من نحن</a>
+                    <a href="index.html#services" class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200">الخدمات</a>
+                    <a href="products.html" class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200">المنتجات</a>
+                    <a href="news.html" class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200">الأخبار</a>
+                    <a href="courses.html" class="text-primary-600 font-bold transition-colors duration-200">الدورات</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200">اتصل بنا</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Course Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-primary-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="bg-primary-100 text-primary-800 px-4 py-2 rounded-full text-sm font-medium">دورة متقدمة</span>
+                    <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mt-6 mb-4">دورة الأطراف الصناعية المتقدمة</h1>
+                    <p class="text-xl text-gray-600 mb-8">تعلم أحدث التقنيات والممارسات في مجال تصميم وتركيب الأطراف الصناعية مع نخبة من المتخصصين</p>
+                    <div class="flex flex-wrap gap-6 mb-8">
+                        <div class="flex items-center space-x-2 space-x-reverse">
+                            <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-clock text-primary-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">المدة</p>
+                                <p class="font-semibold">12 أسبوع</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2 space-x-reverse">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-user-graduate text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">المستوى</p>
+                                <p class="font-semibold">متقدم</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2 space-x-reverse">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-language text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">اللغة</p>
+                                <p class="font-semibold">العربية</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="openModal('enrollModal')" class="bg-primary-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl">
+                        سجل الآن في الدورة
+                    </button>
+                </div>
+                <div class="relative">
+                    <img src="https://images.pexels.com/photos/6823567/pexels-photo-6823567.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                         alt="دورة الأطراف الصناعية" 
+                         class="rounded-2xl shadow-lg w-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Overview -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Main Content -->
+                <div class="lg:col-span-2">
+                    <!-- Course Description -->
+                    <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">نظرة عامة على الدورة</h2>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            دورة متخصصة في مجال الأطراف الصناعية تغطي أحدث التقنيات والممارسات في هذا المجال. ستتعلم كيفية تصميم وتركيب الأطراف الصناعية باستخدام أحدث التقنيات والمواد المتوفرة في السوق.
+                        </p>
+                        <div class="border-t border-gray-100 pt-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">ما ستتعلمه</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-center space-x-3 space-x-reverse">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                    <span class="text-gray-600">تقنيات التصميم الحديثة للأطراف الصناعية</span>
+                                </li>
+                                <li class="flex items-center space-x-3 space-x-reverse">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                    <span class="text-gray-600">المواد المتقدمة المستخدمة في التصنيع</span>
+                                </li>
+                                <li class="flex items-center space-x-3 space-x-reverse">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                    <span class="text-gray-600">تقنيات القياس والمعايرة الدقيقة</span>
+                                </li>
+                                <li class="flex items-center space-x-3 space-x-reverse">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                    <span class="text-gray-600">التدريب العملي على التركيب والضبط</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Course Curriculum -->
+                    <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">محتوى الدورة</h2>
+                        
+                        <!-- Unit 1 -->
+                        <div class="border border-gray-200 rounded-xl mb-4">
+                            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-t-xl">
+                                <div class="flex items-center space-x-3 space-x-reverse">
+                                    <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-book text-primary-600"></i>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-900">الوحدة الأولى: مقدمة في الأطراف الصناعية</h3>
+                                </div>
+                                <span class="text-sm text-gray-500">4 دروس • 3 ساعات</span>
+                            </div>
+                            <div class="p-4">
+                                <ul class="space-y-4">
+                                    <li>
+                                        <a href="#lesson1" class="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                                            <div class="flex items-center space-x-3 space-x-reverse">
+                                                <i class="fas fa-play-circle text-primary-600"></i>
+                                                <span class="text-gray-700 group-hover:text-primary-600">مقدمة في علم الأطراف الصناعية</span>
+                                            </div>
+                                            <span class="text-sm text-gray-500">45 دقيقة</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#lesson2" class="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                                            <div class="flex items-center space-x-3 space-x-reverse">
+                                                <i class="fas fa-play-circle text-primary-600"></i>
+                                                <span class="text-gray-700 group-hover:text-primary-600">أنواع الأطراف الصناعية</span>
+                                            </div>
+                                            <span class="text-sm text-gray-500">45 دقيقة</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#lesson3" class="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                                            <div class="flex items-center space-x-3 space-x-reverse">
+                                                <i class="fas fa-play-circle text-primary-600"></i>
+                                                <span class="text-gray-700 group-hover:text-primary-600">المواد المستخدمة في التصنيع</span>
+                                            </div>
+                                            <span class="text-sm text-gray-500">45 دقيقة</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Unit 2 -->
+                        <div class="border border-gray-200 rounded-xl mb-4">
+                            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-t-xl">
+                                <div class="flex items-center space-x-3 space-x-reverse">
+                                    <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-tools text-primary-600"></i>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-900">الوحدة الثانية: تقنيات القياس والتصميم</h3>
+                                </div>
+                                <span class="text-sm text-gray-500">5 دروس • 4 ساعات</span>
+                            </div>
+                            <div class="p-4">
+                                <ul class="space-y-4">
+                                    <li>
+                                        <a href="#lesson4" class="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                                            <div class="flex items-center space-x-3 space-x-reverse">
+                                                <i class="fas fa-play-circle text-primary-600"></i>
+                                                <span class="text-gray-700 group-hover:text-primary-600">أساسيات القياس الدقيق</span>
+                                            </div>
+                                            <span class="text-sm text-gray-500">45 دقيقة</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#lesson5" class="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                                            <div class="flex items-center space-x-3 space-x-reverse">
+                                                <i class="fas fa-play-circle text-primary-600"></i>
+                                                <span class="text-gray-700 group-hover:text-primary-600">التصميم ثلاثي الأبعاد</span>
+                                            </div>
+                                            <span class="text-sm text-gray-500">45 دقيقة</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Unit 3 -->
+                        <div class="border border-gray-200 rounded-xl">
+                            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-t-xl">
+                                <div class="flex items-center space-x-3 space-x-reverse">
+                                    <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-cog text-primary-600"></i>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-900">الوحدة الثالثة: التركيب والمعايرة</h3>
+                                </div>
+                                <span class="text-sm text-gray-500">4 دروس • 5 ساعات</span>
+                            </div>
+                            <div class="p-4">
+                                <ul class="space-y-4">
+                                    <li>
+                                        <a href="#lesson6" class="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                                            <div class="flex items-center space-x-3 space-x-reverse">
+                                                <i class="fas fa-play-circle text-primary-600"></i>
+                                                <span class="text-gray-700 group-hover:text-primary-600">تقنيات التركيب الأساسية</span>
+                                            </div>
+                                            <span class="text-sm text-gray-500">60 دقيقة</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#lesson7" class="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                                            <div class="flex items-center space-x-3 space-x-reverse">
+                                                <i class="fas fa-play-circle text-primary-600"></i>
+                                                <span class="text-gray-700 group-hover:text-primary-600">ضبط ومعايرة الطرف الصناعي</span>
+                                            </div>
+                                            <span class="text-sm text-gray-500">60 دقيقة</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Videos -->
+                    <div class="bg-white rounded-2xl shadow-lg p-8 mb-8" id="lesson1">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">الدروس المسجلة</h2>
+                        <div class="space-y-6">
+                            <!-- Lesson 1 Video -->
+                            <div>
+                                <div class="aspect-w-16 aspect-h-9">
+                                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen
+                                            class="rounded-xl">
+                                    </iframe>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 mt-4">الدرس الأول: مقدمة في علم الأطراف الصناعية</h3>
+                                <p class="text-gray-600 mb-4">نظرة عامة على التطورات الحديثة في مجال الأطراف الصناعية والتقنيات المستخدمة.</p>
+                                <div class="flex items-center space-x-4 space-x-reverse text-sm">
+                                    <span class="text-gray-500">
+                                        <i class="fas fa-clock ml-1"></i>
+                                        45 دقيقة
+                                    </span>
+                                    <span class="text-gray-500">
+                                        <i class="fas fa-file-alt ml-1"></i>
+                                        مواد إضافية للقراءة
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Lesson 2 Video -->
+                            <div id="lesson2" class="pt-8 border-t border-gray-200">
+                                <div class="aspect-w-16 aspect-h-9">
+                                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen
+                                            class="rounded-xl">
+                                    </iframe>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 mt-4">الدرس الثاني: أنواع الأطراف الصناعية</h3>
+                                <p class="text-gray-600 mb-4">استعراض شامل لمختلف أنواع الأطراف الصناعية وخصائصها واستخداماتها.</p>
+                                <div class="flex items-center space-x-4 space-x-reverse text-sm">
+                                    <span class="text-gray-500">
+                                        <i class="fas fa-clock ml-1"></i>
+                                        45 دقيقة
+                                    </span>
+                                    <span class="text-gray-500">
+                                        <i class="fas fa-file-alt ml-1"></i>
+                                        مواد إضافية للقراءة
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Navigation Buttons -->
+                            <div class="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
+                                <button class="text-gray-600 hover:text-primary-600 transition-colors">
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                    الدرس السابق
+                                </button>
+                                <button class="text-gray-600 hover:text-primary-600 transition-colors">
+                                    الدرس التالي
+                                    <i class="fas fa-arrow-left mr-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                    <!-- Course Details Card -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6 sticky top-24">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">تفاصيل الدورة</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center pb-4 border-b border-gray-100">
+                                <span class="text-gray-600">تاريخ البدء</span>
+                                <span class="font-semibold">1 سبتمبر 2025</span>
+                            </div>
+                            <div class="flex justify-between items-center pb-4 border-b border-gray-100">
+                                <span class="text-gray-600">عدد المحاضرات</span>
+                                <span class="font-semibold">24 محاضرة</span>
+                            </div>
+                            <div class="flex justify-between items-center pb-4 border-b border-gray-100">
+                                <span class="text-gray-600">عدد الساعات</span>
+                                <span class="font-semibold">48 ساعة</span>
+                            </div>
+                            <div class="flex justify-between items-center pb-4 border-b border-gray-100">
+                                <span class="text-gray-600">نوع التدريب</span>
+                                <span class="font-semibold">نظري وعملي</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">الشهادة</span>
+                                <span class="font-semibold">معتمدة دولياً</span>
+                            </div>
+                        </div>
+                        <button onclick="openModal('enrollModal')" class="w-full bg-primary-600 text-white mt-6 py-3 rounded-full font-semibold hover:bg-primary-700 transition-colors">
+                            سجل الآن
+                        </button>
+                        <button class="w-full border-2 border-primary-600 text-primary-600 mt-3 py-3 rounded-full font-semibold hover:bg-primary-50 transition-colors">
+                            تحميل المنهج
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Courses -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">دورات ذات صلة</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Related Course 1 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/7659564/pexels-photo-7659564.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="دورة تقويم العظام الأساسية" 
+                             class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">للمبتدئين</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">دورة تقويم العظام الأساسية</h3>
+                        <p class="text-gray-600 mb-4">تعرف على أساسيات تقويم العظام والجبائر الطبية</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary-600 font-semibold">8 أسابيع</span>
+                            <a href="course-detail.html" class="bg-primary-600 text-white px-4 py-2 rounded-full hover:bg-primary-700 transition-colors">
+                                تفاصيل الدورة
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Course 2 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/7088530/pexels-photo-7088530.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="دورة التأهيل الحركي الشامل" 
+                             class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">تخصصي</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">دورة التأهيل الحركي الشامل</h3>
+                        <p class="text-gray-600 mb-4">برنامج متكامل في التأهيل الحركي وإعادة التأهيل</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary-600 font-semibold">10 أسابيع</span>
+                            <a href="course-detail.html" class="bg-primary-600 text-white px-4 py-2 rounded-full hover:bg-primary-700 transition-colors">
+                                تفاصيل الدورة
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Course 3 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="دورة التقنيات الحديثة في العلاج الطبيعي" 
+                             class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">متقدم</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">التقنيات الحديثة في العلاج الطبيعي</h3>
+                        <p class="text-gray-600 mb-4">اكتشف أحدث التقنيات المستخدمة في العلاج الطبيعي</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary-600 font-semibold">6 أسابيع</span>
+                            <a href="course-detail.html" class="bg-primary-600 text-white px-4 py-2 rounded-full hover:bg-primary-700 transition-colors">
+                                تفاصيل الدورة
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enrollment Modal -->
+    <div id="enrollModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-2xl max-w-md w-full p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold text-gray-900">التسجيل في الدورة</h3>
+                    <button onclick="closeModal('enrollModal')" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700 mb-2">الاسم الكامل</label>
+                        <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" required>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">البريد الإلكتروني</label>
+                        <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" required>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">رقم الجوال</label>
+                        <input type="tel" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" required>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">التخصص</label>
+                        <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" required>
+                    </div>
+                    <button type="submit" class="w-full bg-primary-600 text-white py-2 rounded-lg hover:bg-primary-700 transition-colors">
+                        تأكيد التسجيل
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

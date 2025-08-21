@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genium X3 Prosthetic Knee - Medical Care Alliance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        medical: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation (Same as other pages) -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100" dir="rtl">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary-600 to-medical-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-heartbeat text-white text-xl"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <h1 class="text-xl font-bold text-gray-900">تحالف الرعاية الطبية</h1>
+                        <p class="text-xs text-gray-500">حلول الرعاية الصحية المتقدمة</p>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="hidden lg:flex flex-1 max-w-4xl mx-8">
+                    <div class="relative w-full">
+                        <input type="text" placeholder="البحث في المنتجات..." 
+                               class="w-full pr-6 pl-14 py-3 bg-gray-50 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-right text-lg">
+                        <button class="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-primary-600 rounded-full flex items-center justify-center hover:bg-primary-700 transition-colors">
+                            <i class="fas fa-search text-white text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary-600 font-medium transition-colors relative group">
+                        الرئيسية
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="products.html" class="text-primary-600 font-medium relative">
+                        المنتجات والخدمات
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary-600"></span>
+                    </a>
+                    <a href="news.html" class="text-gray-700 hover:text-primary-600 font-medium transition-colors relative group">
+                        الأخبار
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-primary-600 font-medium transition-colors relative group">
+                        عن الشركة
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-primary-600 font-medium transition-colors relative group">
+                        اتصل بنا
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </div>
+
+                <!-- Header Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- Language Selector -->
+                    <div class="hidden sm:flex items-center space-x-2 bg-gray-50 rounded-full p-1">
+                        <button class="px-3 py-1 text-sm font-medium bg-white text-primary-600 rounded-full shadow-sm">العربية</button>
+                        <button class="px-3 py-1 text-sm font-medium text-gray-600 hover:text-primary-600">English</button>
+                    </div>
+                    
+                    <!-- Contact Button -->
+                    <a href="tel:+966114068868" class="hidden sm:flex items-center space-x-2 space-x-reverse text-primary-600 hover:text-primary-700 font-medium transition-colors">
+                        <i class="fas fa-phone text-sm"></i>
+                        <span>+966 11 406 8868</span>
+                    </a>
+                    
+                    <!-- Book Appointment Button -->
+                    <button onclick="openAppointmentModal()" class="bg-primary-600 text-white px-6 py-3 rounded-full hover:bg-primary-700 transition-all duration-200 font-medium">
+                        احجز موعد
+                    </button>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden p-2 text-gray-600 hover:text-primary-600" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="pt-28 pb-8 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex items-center space-x-2 text-sm text-gray-500">
+                <a href="index.html" class="hover:text-primary-600 transition-colors">الرئيسية</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <a href="products.html" class="hover:text-primary-600 transition-colors">المنتجات والخدمات</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <a href="#" class="hover:text-primary-600 transition-colors">الأطراف الصناعية</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <span class="text-gray-900">جبائر مفصل الرسغ</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Product Detail Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Product Images -->
+                <div class="space-y-4">
+                    <!-- Main Image -->
+                    <div class="relative overflow-hidden rounded-2xl bg-white shadow-lg">
+                        <img src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" 
+                             alt="جبائر مفصل الرسغ" 
+                             class="w-full h-96 object-cover" id="mainImage">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-medium">جديد</span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <button class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-600 hover:text-red-500 transition-colors shadow-lg">
+                                <i class="fas fa-heart text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Thumbnail Images -->
+                    <div class="grid grid-cols-4 gap-4">
+                        <button class="relative overflow-hidden rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow" onclick="changeMainImage(this)">
+                            <img src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
+                                 alt="View 1" class="w-full h-20 object-cover">
+                        </button>
+                        <button class="relative overflow-hidden rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow" onclick="changeMainImage(this)">
+                            <img src="https://images.pexels.com/photos/4386476/pexels-photo-4386476.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
+                                 alt="View 2" class="w-full h-20 object-cover">
+                        </button>
+                        <button class="relative overflow-hidden rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow" onclick="changeMainImage(this)">
+                            <img src="https://images.pexels.com/photos/1170979/pexels-photo-1170979.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
+                                 alt="View 3" class="w-full h-20 object-cover">
+                        </button>
+                        <button class="relative overflow-hidden rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow" onclick="changeMainImage(this)">
+                            <img src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
+                                 alt="View 4" class="w-full h-20 object-cover">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Information -->
+                <div class="space-y-8">
+                    <!-- Product Header -->
+                    <div>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">الجبائر التصحيحية</span>
+                            <div class="flex items-center">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-gray-600 ml-2">(24 تقييم)</span>
+                            </div>
+                        </div>
+                        <h1 class="text-4xl font-bold text-gray-900 mb-4">جبائر مفصل الرسغ</h1>
+                        <p class="text-xl text-gray-600 leading-relaxed">جبائر راحة اليد هي منتج ديناميكي وفعال لليد والساعد. يتم استخدامها لتصحيح انحراف اليد عن طريق علاج ومنع حركة تقفع المعصم، والمفصل الكعبري والأصابع.</p>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="flex items-center space-x-4">
+                        <span class="text-4xl font-bold text-primary-600">2,500 ريال</span>
+                        <span class="text-lg text-gray-400 line-through">3,000 ريال</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">وفر 500 ريال</span>
+                    </div>
+
+                    <!-- Key Features -->
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-900">المميزات الرئيسية</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-gray-700">مصنوع من خامات متينة غير مرنة</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-gray-700">طبقة داخلية من القطن لحماية جلد المريض</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-gray-700">تصحيح انحراف اليد بفعالية</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-gray-700">منع حركة تقفع المعصم والمفصل الكعبري</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-gray-700">سهولة في الاستخدام والصيانة</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Size Selection -->
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-900">خيارات الحجم</h3>
+                        <div class="flex space-x-3">
+                            <button class="px-4 py-2 border-2 border-primary-600 text-primary-600 rounded-lg font-medium hover:bg-primary-600 hover:text-white transition-colors">صغير</button>
+                            <button class="px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-lg font-medium hover:border-primary-600 hover:text-primary-600 transition-colors">متوسط</button>
+                            <button class="px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-lg font-medium hover:border-primary-600 hover:text-primary-600 transition-colors">كبير</button>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="space-y-4">
+                        <div class="flex space-x-4">
+                            <button class="flex-1 bg-primary-600 text-white py-4 px-8 rounded-full font-semibold hover:bg-primary-700 transition-colors shadow-lg hover:shadow-xl">
+                                طلب عرض سعر
+                            </button>
+                            <button class="flex-1 border-2 border-primary-600 text-primary-600 py-4 px-8 rounded-full font-semibold hover:bg-primary-600 hover:text-white transition-colors">
+                                حجز استشارة
+                            </button>
+                        </div>
+                        <div class="flex space-x-4">
+                            <button class="flex items-center justify-center space-x-2 text-gray-600 hover:text-primary-600 transition-colors">
+                                <i class="fas fa-share-alt"></i>
+                                <span>مشاركة</span>
+                            </button>
+                            <button class="flex items-center justify-center space-x-2 text-gray-600 hover:text-primary-600 transition-colors">
+                                <i class="fas fa-download"></i>
+                                <span>تحميل الكتيب</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Info -->
+                    <div class="bg-gray-100 rounded-2xl p-6 space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <span class="text-sm text-gray-500">رمز المنتج</span>
+                                <p class="font-semibold text-gray-900">WS-2025</p>
+                            </div>
+                            <div>
+                                <span class="text-sm text-gray-500">الوزن</span>
+                                <p class="font-semibold text-gray-900">0.3 كجم</p>
+                            </div>
+                            <div>
+                                <span class="text-sm text-gray-500">المادة</span>
+                                <p class="font-semibold text-gray-900">بلاستيك طبي مع قطن</p>
+                            </div>
+                            <div>
+                                <span class="text-sm text-gray-500">الضمان</span>
+                                <p class="font-semibold text-gray-900">سنة واحدة</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Tabs -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Tab Navigation -->
+            <div class="border-b border-gray-200 mb-8">
+                <nav class="flex space-x-8">
+                    <button class="py-4 px-1 border-b-2 border-primary-600 text-primary-600 font-medium" onclick="showTab('description')">الوصف</button>
+                    <button class="py-4 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700 font-medium" onclick="showTab('specifications')">المواصفات</button>
+                    <button class="py-4 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700 font-medium" onclick="showTab('reviews')">التقييمات (24)</button>
+                    <button class="py-4 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700 font-medium" onclick="showTab('support')">الدعم</button>
+                </nav>
+            </div>
+
+            <!-- Tab Content -->
+            <div id="description" class="tab-content">
+                <div class="prose max-w-none">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">وصف المنتج</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">جبائر راحة اليد هي منتج ديناميكي وفعال لليد والساعد. يتم استخدامها لتصحيح انحراف اليد عن طريق علاج ومنع حركة تقفع المعصم، والمفصل الكعبري والأصابع. تصنع جبائر راحة اليد من خامات متينة غير مرنة مع طبقة داخلية من القطن لحماية جلد المريض.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-900 mb-4">التقنية المتقدمة</h4>
+                    <p class="text-gray-700 mb-6">تم تصميم هذا المنتج باستخدام أحدث التقنيات في مجال الجبائر التصحيحية، حيث يوفر الدعم المطلوب للمعصم والأصابع مع ضمان الراحة القصوى للمريض.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-900 mb-4">الأمان المحسن</h4>
+                    <p class="text-gray-700 mb-6">يوفر المنتج طبقة إضافية من الأمان من خلال التصميم المدروس الذي يمنع الإصابات ويضمن الاستخدام الآمن لفترات طويلة.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-900 mb-4">سهولة الاستخدام</h4>
+                    <p class="text-gray-700">تم تصميم الجبيرة لتكون سهلة الارتداء والخلع، مع إمكانية التعديل حسب حجم المريض وحالته الطبية.</p>
+                </div>
+            </div>
+
+            <div id="specifications" class="tab-content hidden">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">المواصفات التقنية</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-semibold text-gray-900">المواصفات الفيزيائية</h4>
+                        <table class="w-full">
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 text-gray-600">الوزن</td>
+                                <td class="py-2 font-medium">0.3 كجم</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 text-gray-600">الطول</td>
+                                <td class="py-2 font-medium">25 سم</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 text-gray-600">المادة</td>
+                                <td class="py-2 font-medium">بلاستيك طبي وقطن</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 text-gray-600">مقاومة الماء</td>
+                                <td class="py-2 font-medium">مقاوم للرطوبة</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-semibold text-gray-900">الأداء</h4>
+                        <table class="w-full">
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 text-gray-600">الحد الأقصى لوزن المستخدم</td>
+                                <td class="py-2 font-medium">100 كجم</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 text-gray-600">مدة الاستخدام اليومي</td>
+                                <td class="py-2 font-medium">حتى 12 ساعة</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 text-gray-600">فترة التكيف</td>
+                                <td class="py-2 font-medium">أسبوع واحد</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 text-gray-600">الضمان</td>
+                                <td class="py-2 font-medium">سنة واحدة</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="reviews" class="tab-content hidden">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">تقييمات العملاء</h3>
+                <div class="space-y-6">
+                    <!-- Review 1 -->
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center text-white font-semibold">
+                                    JD
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">أحمد محمد</h4>
+                                    <p class="text-sm text-gray-500">عملية شراء موثقة</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-sm text-gray-500">منذ أسبوعين</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">"جبيرة الرسغ هذه غيرت حياتي تماماً. الراحة والدعم الذي توفره لا يضاهى. أنصح بها بشدة!"</p>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="bg-gray-50 rounded-2xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-medical-600 rounded-full flex items-center justify-center text-white font-semibold">
+                                    SM
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">سارة أحمد</h4>
+                                    <p class="text-sm text-gray-500">عملية شراء موثقة</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-sm text-gray-500">منذ شهر</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">"جودة المنتج وخدمة العملاء ممتازة. المنتج يستحق كل ريال دفعته فيه!"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="support" class="tab-content hidden">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">الدعم والموارد</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <h4 class="text-lg font-semibold text-gray-900">الوثائق</h4>
+                        <div class="space-y-3">
+                            <a href="#" class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                <i class="fas fa-file-pdf text-red-500"></i>
+                                <span class="font-medium">دليل المستخدم (PDF)</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                <i class="fas fa-video text-blue-500"></i>
+                                <span class="font-medium">دليل الإعداد المرئي</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                <i class="fas fa-mobile-alt text-green-500"></i>
+                                <span class="font-medium">دليل التطبيق المحمول</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <h4 class="text-lg font-semibold text-gray-900">احصل على المساعدة</h4>
+                        <div class="space-y-3">
+                            <button class="w-full flex items-center space-x-3 p-4 bg-primary-50 text-primary-700 rounded-lg hover:bg-primary-100 transition-colors">
+                                <i class="fas fa-phone"></i>
+                                <span class="font-medium">اتصل بالدعم: +966 11 406 8868</span>
+                            </button>
+                            <button class="w-full flex items-center space-x-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                <i class="fas fa-envelope"></i>
+                                <span class="font-medium">دعم البريد الإلكتروني</span>
+                            </button>
+                            <button class="w-full flex items-center space-x-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                <i class="fas fa-comments"></i>
+                                <span class="font-medium">المحادثة المباشرة</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">منتجات ذات صلة</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Related Product 1 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" 
+                             alt="جبائر الرسغ" 
+                             class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-3 right-3">
+                            <button class="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-600 hover:text-red-500 transition-colors">
+                                <i class="fas fa-heart text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">جبائر الرسغ</h3>
+                        <p class="text-sm text-gray-600 mb-3">جبيرة معصم موثوقة للأنشطة اليومية</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-primary-600">2,200 ريال</span>
+                            <a href="#" class="bg-primary-600 text-white px-4 py-2 rounded-full text-sm hover:bg-primary-700 transition-colors">
+                                عرض التفاصيل
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Product 2 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/4386476/pexels-photo-4386476.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" 
+                             alt="جبيرة اليد التوظيفية" 
+                             class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-3 right-3">
+                            <button class="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-600 hover:text-red-500 transition-colors">
+                                <i class="fas fa-heart text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">جبيرة اليد التوظيفية</h3>
+                        <p class="text-sm text-gray-600 mb-3">دعامة لمعصم الأطفال مع جبيرة تشريحية</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-primary-600">1,800 ريال</span>
+                            <a href="#" class="bg-primary-600 text-white px-4 py-2 rounded-full text-sm hover:bg-primary-700 transition-colors">
+                                عرض التفاصيل
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Product 3 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/1170979/pexels-photo-1170979.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" 
+                             alt="دعامات مفصل المرفق" 
+                             class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-3 right-3">
+                            <button class="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-600 hover:text-red-500 transition-colors">
+                                <i class="fas fa-heart text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">دعامات مفصل المرفق</h3>
+                        <p class="text-sm text-gray-600 mb-3">دعامات خفيفة الوزن للأطفال لتثبيت المرفق</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-primary-600">1,200 ريال</span>
+                            <a href="#" class="bg-primary-600 text-white px-4 py-2 rounded-full text-sm hover:bg-primary-700 transition-colors">
+                                عرض التفاصيل
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Product 4 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" 
+                             alt="دعامات المعصم واليد" 
+                             class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-3 right-3">
+                            <button class="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-600 hover:text-red-500 transition-colors">
+                                <i class="fas fa-heart text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">دعامات المعصم واليد</h3>
+                        <p class="text-sm text-gray-600 mb-3">منتج سهل الارتداء والخلع لتثبيت الأصابع</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-primary-600">950 ريال</span>
+                            <a href="#" class="bg-primary-600 text-white px-4 py-2 rounded-full text-sm hover:bg-primary-700 transition-colors">
+                                عرض التفاصيل
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section (Above Footer) -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">موقعنا</h2>
+                <p class="text-xl text-gray-600">زورونا في مقرنا الرئيسي في الرياض</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Map -->
+                <div class="relative h-96 rounded-2xl overflow-hidden shadow-lg">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.397!2d46.7070681!3d24.6673385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2s2862%20Ahmad%20Al%20Hawwari%20St%2C%20Al%20Murabba%2C%20Riyadh%2012626%2C%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1647834567890!5m2!1sen!2sus"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">معلومات الاتصال</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4 space-x-reverse">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">العنوان</h4>
+                                    <p class="text-gray-600">2862 Ahmad Al Hawwari St, Al Murabba, Riyadh 12626 6360</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4 space-x-reverse">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">الهاتف</h4>
+                                    <p class="text-gray-600">+966 11 406 8868</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4 space-x-reverse">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">البريد الإلكتروني</h4>
+                                    <p class="text-gray-600">info@medicare-alliance.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4 space-x-reverse">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-clock text-primary-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">ساعات العمل</h4>
+                                    <p class="text-gray-600">الأحد - الخميس: 8:00 ص - 6:00 م</p>
+                                    <p class="text-gray-600">الجمعة: 2:00 م - 6:00 م</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-primary-50 rounded-2xl p-6">
+                        <h4 class="font-semibold text-primary-900 mb-3">احجز موعدك الآن</h4>
+                        <p class="text-primary-700 mb-4">احصل على استشارة مجانية مع خبرائنا المتخصصين</p>
+                        <button onclick="openAppointmentModal()" class="w-full bg-primary-600 text-white py-3 px-6 rounded-full font-semibold hover:bg-primary-
